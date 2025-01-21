@@ -27,3 +27,15 @@ function calculateSquare() {
         display.value = "Error";
     }
 }
+
+// Function to cancel the last digit or delete selected text
+function cancelLastDigit() {
+    // Check if there's selected text
+    if (display.selectionStart !== display.selectionEnd) {
+        // Remove the selected text
+        display.setRangeText('');
+    } else {
+        // If no text is selected, remove the last character
+        display.value = display.value.slice(0, -1);
+    }
+}
